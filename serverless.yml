@@ -1,0 +1,17 @@
+service: cruzzie-fastify-api
+frameworkVersion: "3"
+
+plugins:
+  - serverless-esbuild
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage}
+  region: ap-northeast-1
+
+functions:
+  api:
+    handler: src/index.handler
+    events:
+      - httpApi: "*"

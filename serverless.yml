@@ -1,8 +1,10 @@
 service: cruzzie-fastify-api
-frameworkVersion: "3"
 
 plugins:
   - serverless-esbuild
+  - serverless-dotenv-plugin
+
+useDotenv: true
 
 provider:
   name: aws
